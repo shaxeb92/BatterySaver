@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashBoard">
+
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/batteryLevelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Battery Level: "
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/welcomeText"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:id="@+id/appListText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Application List: "
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/batteryLevelText"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/forceStopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Force Stop"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:layout_below="@id/appListText"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/batterySaverButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Battery Saver"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:layout_below="@id/forceStopButton"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/scheduleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Schedule"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:layout_below="@id/batterySaverButton"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/killAppsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kill Apps"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:layout_below="@id/scheduleButton"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/viewLogsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Logs"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:layout_below="@id/killAppsButton"
+        android:layout_marginTop="20dp" />
+
+</RelativeLayout>
