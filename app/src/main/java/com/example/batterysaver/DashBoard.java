@@ -1,13 +1,18 @@
 package com.example.batterysaver;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class DashBoard extends AppCompatActivity {
 
@@ -17,6 +22,14 @@ public class DashBoard extends AppCompatActivity {
     private Button scheduleButton;
     private Button killAppsButton;
     private Button viewLogsButton;
+    /*
+
+    private RecyclerView recyclerView;
+    private AppListAdapter appListAdapter;
+    private List<BatteryApp> batteryAppList;
+    private DBHelper dbHelper;
+
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +46,16 @@ public class DashBoard extends AppCompatActivity {
         // Get battery level and display it
         int batteryLevel = getBatteryLevel();
         batteryLevelText.setText("Battery Level: " + batteryLevel + "%");
+
+        /* inserted part
+        recyclerView = findViewById(R.id.app_list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        dbHelper = new DBHelper(this);
+        batteryAppList = getBatteryApps();
+
+        appListAdapter = new AppListAdapter(batteryAppList);
+        recyclerView.setAdapter(appListAdapter); */
 
         forceStopButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,4 +102,24 @@ public class DashBoard extends AppCompatActivity {
     private int getBatteryLevel() {
         return 80;
     }
+
+    //
+    /*
+    private List<BatteryApp> getBatteryApps() {
+        List<BatteryApp> apps = new ArrayList<>();
+
+        // Retrieve the battery apps using the DBHelper
+        Cursor cursor = dbHelper.getAllBatteryApps();
+        if (cursor.moveToFirst()) {
+            do {
+                String appName = cursor.getString(cursor.getColumnIndex("app_name"));
+                int batteryLevel = cursor.getInt(cursor.getColumnIndex("battery_level"));
+                BatteryApp batteryApp = new BatteryApp(appName, batteryLevel);
+                apps.add(batteryApp);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return apps;
+    }*/
 }
